@@ -4,16 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="7fb343f3-46ac-49e5-9b18-3c2e4a6efcfa" name="Changes" comment="" />
+=======
+<<<<<<< HEAD
+    <list default="true" id="c6ba5d6b-b2f5-47c9-8b70-734ae77056e3" name="Changes" comment="" />
+=======
+    <list default="true" id="bac8c70f-4c82-435e-b098-e810dccc6326" name="Changes" comment="" />
+>>>>>>> 6a0656989d4a4ea7bdf1cac663dd54c3697a0b17
+>>>>>>> 4e790d6cef67a98886a214efefee28476bc5bc47
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="24KipgDq7qv68AvWtDvRYpO1Y6V" />
+=======
+<<<<<<< HEAD
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="24KhdMUuEb3TKrhszB5MfI1GhrW" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="24Kkw6j0ZAexXjTDJqls2YNWMR0" />
+>>>>>>> 6a0656989d4a4ea7bdf1cac663dd54c3697a0b17
+>>>>>>> 4e790d6cef67a98886a214efefee28476bc5bc47
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -21,14 +57,24 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/server" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+=======
+<<<<<<< HEAD
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> 6a0656989d4a4ea7bdf1cac663dd54c3697a0b17
+>>>>>>> 4e790d6cef67a98886a214efefee28476bc5bc47
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="7fb343f3-46ac-49e5-9b18-3c2e4a6efcfa" name="Changes" comment="" />
       <created>1643385862951</created>
       <option name="number" value="Default" />
@@ -37,4 +83,36 @@
     </task>
     <servers />
   </component>
+=======
+<<<<<<< HEAD
+      <changelist id="c6ba5d6b-b2f5-47c9-8b70-734ae77056e3" name="Changes" comment="" />
+      <created>1643385278770</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1643385278770</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+=======
+      <changelist id="bac8c70f-4c82-435e-b098-e810dccc6326" name="Changes" comment="" />
+      <created>1643386902143</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1643386902143</updated>
+    </task>
+    <servers />
+  </component>
+>>>>>>> 6a0656989d4a4ea7bdf1cac663dd54c3697a0b17
+>>>>>>> 4e790d6cef67a98886a214efefee28476bc5bc47
 </project>

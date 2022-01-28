@@ -11,10 +11,22 @@ create table tobey_magiure(
 
 create table tobeytypes(
 	tobeytype_id int primary key auto_increment,
-    `name` varchar(255) not null,
-    `description` varchar(255) not null,
+    vibe varchar(255) not null,
     maguire_id int not null,
     constraint fk_tobeytypes_maguire_id
 		foreign key(maguire_id)
         references tobey_magiure(maguire_id)
+);
+
+create table tobey_maguire_tobeytypes(
+	maguire_id int not null,
+    tobeytype_id int not null,
+    constraint pk_tobey_maguire_tobeytypes
+			primary key(maguire_id, tobeytype_id),
+        constraint fk_tobey_maguire_tobeytypes_maguire_id
+			foreign key(maguire_id)
+            references tobey_magiure(maguire_id),
+		constraint fk_tobey_maguire_tobeytypes_tobeytype_id
+			foreign key(tobeytype_id)
+            references tobeytypes(tobeytype_id)
 );

@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("http://localhost:3000")
+//@CrossOrigin(origins = {"http://localhost:3000","http://127.0.0.1:8080"})
 @RequestMapping("/api/maguire")
 public class MaguireController {
 

@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
+@Table(name="tobey_maguire")
 public class Maguire {
 
     @Id
@@ -22,7 +23,7 @@ public class Maguire {
     private String imageUrl;
 
     @ManyToMany
-    @JoinTable (name = "tobey_maguire",
+    @JoinTable (name = "tobey_maguire_tobeytypes",
             joinColumns = @JoinColumn(name = "maguire_id"),
             inverseJoinColumns = @JoinColumn(name = "tobeytype_id"))
     private List<TobeyType> tobeytypes = new ArrayList<>();

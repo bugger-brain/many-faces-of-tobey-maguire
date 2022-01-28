@@ -10,7 +10,4 @@ public class TobeyType {
     private int tobeyTypeId;
     @NotBlank
     private String vibe;
-    @NotBlank
-    private String description;
-
 }

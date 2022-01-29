@@ -1,0 +1,19 @@
+import { Link } from "react-router-dom";
+
+
+function MaguireCard({ maguire }) {
+//do we need to add vibe in here
+    return (
+        <div className="card">
+            {maguire.imageURL && <img src={MaguireCard.imageURL} className="card-img-top" alt={maguire.name}></img>}
+            <div className="card-body">
+                <h5 className="card-title">{maguire.name}</h5>
+                <h6 className="card-subtitle">{MaguireCard.description}</h6> 
+            </div>
+        </div>
+        //could add link to edit or delete here but idk for a fanpage
+    );
+
+}
+
+export default MaguireCard;

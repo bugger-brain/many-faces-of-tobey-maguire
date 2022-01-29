@@ -1,20 +1,20 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./components/Home";
-//import NavBar from ".NavBar";
+
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import Maguires from "./components/Maguire";
+import NavBar from "./components/NavBar";
 import Maguire from "./components/Maguire"
 function App() {
   return (
-    <Maguire />
-    // <Router>
-    //   <NavBar />
-
-    //   <Switch>
-    //     <Route exact path = "/">
-    //       <Home />
-    //     </Route>
-
-    //   </Switch>
-    // </Router>
+  <div className="container">
+    <Router>
+      <NavBar />
+      <Switch>
+        <Route path="/" exact>
+          <Maguires />
+        </Route>
+      </Switch>
+    </Router>
+  </div>
   )
 }
 export default App;

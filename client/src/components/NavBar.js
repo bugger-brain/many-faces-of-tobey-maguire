@@ -1,6 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+
 
 function NavBar(){
+
+    const history = useHistory();
+
     return (
         <nav>
             <ul>
@@ -9,7 +13,7 @@ function NavBar(){
                 </li>
             </ul>
         </nav>
-    )
+    );
 }
 
 export default NavBar;

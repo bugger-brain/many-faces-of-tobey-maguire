@@ -5,8 +5,8 @@ use many_faces_of_tobey_maguire_test;
 create table tobey_maguire(
 	maguire_id int primary key auto_increment,
     `name` varchar(255) not null,
-    `description` varchar(255) not null,
-    image_url varchar(256) not null
+    `description` varchar(2048) not null,
+    image_url varchar(1024) not null
 );
 
 create table tobeytypes(

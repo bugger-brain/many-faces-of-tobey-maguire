@@ -35,7 +35,7 @@ insert into tobeytypes(tobeytype_id, vibe) values
     (5, 'Awkward Tobey');
 
 insert into tobey_maguire(maguire_id, `name`, `description`, image_url) values
-	(1, 'Dancing Tobey', 'Spiderman Dance Scene', 'https://static0.srcdn.com/wordpress/wp-content/uploads/2020/08/Tobey-Maguire-as-Peter-Parker-Dancing-in-Spider-Man-3.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5'),
+	(1, 'Dancing Tobey', 'Spiderman Dance Scene', 'https://i.imgur.com/kzh2pcp.jpg'),
     (2, 'Angry Tobey', 'Tobey angry with paparrazi', 'https://images4.fanpop.com/image/photos/23000000/angry-Tobey-tobey-maguire-23084753-450-536.jpg'),
     (3, 'Sad Tobey', 'Tobey sad & crying', 'https://townsquare.media/site/442/files/2012/09/tobey-cry.jpg?w=980&q=75'),
     (4, 'Awkward Tobey', 'Weird Face Tobey', 'https://www.hayvine.com/careers/16065716561.png'),

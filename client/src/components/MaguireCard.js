@@ -5,7 +5,7 @@ function MaguireCard({ maguire }) {
 //do we need to add vibe in here
     return (
         <div className="card">
-            {maguire.imageURL && <img src={MaguireCard.imageURL} className="card-img-top" alt={maguire.name}></img>}
+            {maguire.imageUrl && <img src={maguire.imageUrl} className="card-img-top" alt={maguire.name}></img>}
             <div className="card-body">
                 <h5 className="card-title">{maguire.name}</h5>
                 <h6 className="card-subtitle">{MaguireCard.description}</h6> 

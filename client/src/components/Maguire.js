@@ -8,7 +8,7 @@ function Maguire () {
     const [errors, setErrors] = useState([]);
 
     //do i need these
-    const [tobyType, setTobyType] = useState([]);
+    const [tobeyType, setTobeyType] = useState([]);
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [imageURL, setImageURL] = useState("");

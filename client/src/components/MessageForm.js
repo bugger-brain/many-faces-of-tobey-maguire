@@ -1,11 +1,17 @@
 import { useState } from "react";
 function MessageForm(){
+    const defaultMessage={
+        name: "",
+        message: ""
+    };
 
+    const [messageList, setMessageList] = useState(defaultMessage);
     const [name, setName] = useState("")
     const [message, setMessage] = useState("");
 
     const onSubmit = (event) => {
         event.preventDefault();
+        
     }
     return(
         <form onSubmit={onSubmit}>

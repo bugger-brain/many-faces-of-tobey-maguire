@@ -1,9 +1,14 @@
 
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import MaguireCard from "./MaguireCard";
+
+
 
 function Maguire () {
     const [maguires, setMaguires] = useState([]);
+    const { tobeyTypeId } = useParams();
+    console.log(tobeyTypeId);
 
     const [errors, setErrors] = useState([]);
 
@@ -15,7 +20,7 @@ function Maguire () {
     const [view, setView] = useState("List");
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/maguire")
+        fetch(`http://localhost:8080/api/maguire${tobeyTypeId ? "/tobey/"+tobeyTypeId:""}`)
             .then(response => {
                 if (response.status ===200) {
                     return response.json();
@@ -32,6 +37,7 @@ function Maguire () {
         </div>))}
         </div>
     );
+    
     
 }
 

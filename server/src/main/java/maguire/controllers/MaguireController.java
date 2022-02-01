@@ -36,7 +36,12 @@ public class MaguireController {
     public List<Maguire> getMaguires() {
         List<Maguire> maguires = maguireService.findAll();
         return maguires;
+    }
 
+    @GetMapping("/tobey/{tobeyTypeId}")
+    public List<Maguire> getMaguiresByTobeyTypeId(@PathVariable int tobeyTypeId) {
+        List<Maguire> maguires = maguireService.findByTobeyTypeId(tobeyTypeId);
+        return maguires;
     }
 
     @GetMapping("/{maguireId}")

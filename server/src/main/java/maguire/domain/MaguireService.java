@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import javax.validation.*;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class MaguireService {
@@ -70,5 +71,12 @@ public class MaguireService {
             }
         }
         return result;
+    }
+
+    public List<Maguire> findByTobeyTypeId(int tobeyTypeId) {
+        return repository.findAll()
+                .stream().filter(m -> {
+                    return m.getTobeytypes().stream().anyMatch(tt -> tt.getTobeytypeId() == tobeyTypeId);
+                }).collect(Collectors.toList());
     }
 }

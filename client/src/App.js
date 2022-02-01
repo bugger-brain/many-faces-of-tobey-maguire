@@ -1,6 +1,6 @@
 
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-import Maguires from "./components/Maguire";
+import Maguire from "./components/Maguire";
 import NavBar from "./components/NavBar";
 import Bio from "./components/Bio";
 import Filmography from "./components/Filmography";
@@ -12,7 +12,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/" exact>
-          <Maguires />
+          <Maguire />
         </Route>
         <Route path="/biography">
           <Bio />
@@ -22,6 +22,9 @@ function App() {
         </Route>
         <Route path="/leaveamessage">
           <MessageForm />
+        </Route>
+        <Route path={"/tobey/:tobeyTypeId"}>
+          <Maguire  />
         </Route>
       </Switch>
     </Router>

@@ -1,16 +1,35 @@
 import { useState } from "react";
+import {Link, useHistory} from "react-router-dom";
 function MessageForm(){
-    const defaultMessage={
+    const defaultMessage=[
+        {
         name: "",
-        message: ""
-    };
+        description: ""
+        }
+    ];
 
-    const [messageList, setMessageList] = useState(defaultMessage);
+    const [messages, setMessages] = useState(defaultMessage);
     const [name, setName] = useState("")
-    const [message, setMessage] = useState("");
+    const [description, setDescription] = useState("");
+
+    const history = useHistory();
+
+   
 
     const onSubmit = (event) => {
         event.preventDefault();
+
+        const updatedMessages = {...messages};
+
+        const newMessage={
+            name,
+            description
+        };
+        setMessages([...messages, newMessage]);
+
+        setName("");
+        setDescription("");
+        console.log(messages);
         
     }
     return(
@@ -24,23 +43,24 @@ function MessageForm(){
             id="name"
             name="name"
             value={name}
-             onChange ={onSubmit}
+             onChange ={event=> setName(event.target.value)}
             />
            
         </div>
         <div>
-            <label htmlFor="message"> Your Message: </label>
+            <label htmlFor="description"> Your Message: </label>
             <input
             type="text"
-            id="message"
-            name="message"
-            value={message}
-            onChange={onSubmit}
+            id="description"
+            name="description"
+            value={description}
+            onChange={event=> setDescription(event.target.value)}
             />
         </div>
 
         <div>
             <button type="submit">Send</button>
+            <Link to="/"> Cancel</Link>
         </div>
         </form>
     );

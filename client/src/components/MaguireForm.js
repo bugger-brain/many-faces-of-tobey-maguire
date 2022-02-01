@@ -72,3 +72,4 @@ function MaguireForm() {
 
 }
 
+export default MaguireForm;

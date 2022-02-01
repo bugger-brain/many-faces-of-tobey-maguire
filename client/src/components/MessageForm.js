@@ -26,10 +26,10 @@ function MessageForm(){
             description
         };
         setMessages([...messages, newMessage]);
+        console.log(messages);
 
         setName("");
         setDescription("");
-        console.log(messages);
         
     }
     return(
@@ -63,6 +63,8 @@ function MessageForm(){
             <Link to="/"> Cancel</Link>
         </div>
         </form>
+
+
     );
 }
 

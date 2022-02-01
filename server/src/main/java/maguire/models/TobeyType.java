@@ -11,4 +11,20 @@ public class TobeyType {
     private int tobeytypeId;
     @NotBlank
     private String vibe;
+
+    public int getTobeytypeId() {
+        return tobeytypeId;
+    }
+
+    public void setTobeytypeId(int tobeytypeId) {
+        this.tobeytypeId = tobeytypeId;
+    }
+
+    public String getVibe() {
+        return vibe;
+    }
+
+    public void setVibe(String vibe) {
+        this.vibe = vibe;
+    }
 }

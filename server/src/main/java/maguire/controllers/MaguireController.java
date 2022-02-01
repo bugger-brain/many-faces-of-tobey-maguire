@@ -5,6 +5,7 @@ import maguire.domain.Result;
 import maguire.domain.ResultStatus;
 import maguire.domain.TobeyTypeService;
 import maguire.models.Maguire;
+import maguire.models.TobeyType;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,7 +34,9 @@ public class MaguireController {
 
     @GetMapping
     public List<Maguire> getMaguires() {
-        return maguireService.findAll();
+        List<Maguire> maguires = maguireService.findAll();
+        return maguires;
+
     }
 
     @GetMapping("/{maguireId}")
@@ -101,6 +104,11 @@ public class MaguireController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping("/tobeytypes")
+    public List<TobeyType> getTobeyTypes() {
+        List<TobeyType> tobeyTypes = tobeyTypeService.findAll();
+        return tobeyTypes;
+    }
 
     private Result<Void> makeResult(BindingResult bindingResult) {
         Result<Void> result = new Result<>();

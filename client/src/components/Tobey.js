@@ -13,7 +13,7 @@ function Tobey () {
     const [errors, setErrors] = useState([]);
 
     //do i need these
-    const [tag, setTobeyType] = useState([]);
+    const [tag, setTag] = useState([]);
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [imageURL, setImageURL] = useState("");

@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
 
-function MaguireForm() {
+function TobeyForm() {
 
-    const [maguire, setMaguire] = useState({
-        maguireId: 0,
+    const [tobey, setTobey] = useState({
+        tobeyId: 0,
         name: "",
         description: "",
         imageUrl: "",
-        tobeyTypes: []
+        tags: []
     });
-    const [tobeyTypes, setTobeyTypes] = useState([]);
+    const [tags, setTags] = useState([]);
     const [errors, setErrors] = useState([]);
     
-    const { id: maguireId } = useParams();
+    const { id: tobeyId } = useParams();
     const history = useHistory();
     
     useEffect(() => {
-        if (maguireId) {
-            fetch(`http://localhost:8080/api/maguire/${maguireId}`)
+        if (tobeyId) {
+            fetch(`http://localhost:8080/api/tobey/${tobeyId}`)
                 .then(response => {
                     if (response.status === 200) {
                         return response.json();
@@ -27,43 +27,43 @@ function MaguireForm() {
                 })
                 .then(m => {
                     // h.humanName = h.humanName || "";
-                    setMaguire(m);
+                    setTobey(m);
                 })
                 .catch(console.error);
         }
     
-        fetch("http://localhost:8080/api/maguire/tobeytype")
+        fetch("http://localhost:8080/api/tobey/tag")
             .then(response => {
                 if (response.status === 200) {
                     return response.json();
                 }
-                return Promise.reject("could not fetch tobeytypes");
+                return Promise.reject("could not fetch tags");
             })
-            .then(t => setTobeyTypes(t))
+            .then(t => setTags(t))
             .catch(console.error);
-    }, [maguireId]);
+    }, [tobeyId]);
     
     function onChange(event) {
-        const nextMaguire = { ...maguire };
-        if (event.target.name === "tobeyTypes") {
-            const tobeyTypeId = parseInt(event.target.value, 10);
+        const nextTobey = { ...tobey };
+        if (event.target.name === "tags") {
+            const tagId = parseInt(event.target.value, 10);
             if (event.target.checked) {
-                const nextTobeyType = tobeyTypes.find(t => t.tobeyTypeId === tobeyTypeId);
-                nextMaguire.tobeyTypes.push(nextTobeyType);
+                const nextTag = tags.find(t => t.tagId === tagId);
+                nextTobey.tags.push(nextTag);
             } else {
-                const nextTobeyTypes = nextHero.tobeyTypes.filter(i => i.tobeyTypeId !== tobeyTypeId);
-                nextMaguire.tobeyTypes = nextTobeyTypes;
+                const nextTags = nextTobey.tags.filter(i => i.tagId !== tagId);
+                nextTobey.tags = nextTags;
             }
         } else {
-            nextMaguire[event.target.name] = event.target.value;
+            nextTobey[event.target.name] = event.target.value;
         }
     
-        setHero(nextMaguire);
+        setHero(nextTobey);
     }
 
     function onSubmit(event) {
         event.preventDefault();
-        if (maguire.maguireId) {
+        if (tobey.tobeyId) {
             update();
         } else {
             add();
@@ -77,10 +77,10 @@ function MaguireForm() {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(maguire)
+            body: JSON.stringify(tobey)
         };
 
-        fetch("http://localhost:8080/maguire", init)
+        fetch("http://localhost:8080/tobey", init)
             .then(response => {
                 if (response.status === 201) {
                     history.push("/");
@@ -100,14 +100,14 @@ function MaguireForm() {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(maguire)
+            body: JSON.stringify(tobey)
         };
-        fetch(`http://localhost:8080/maguire/${maguire.maguireId}`, init)
+        fetch(`http://localhost:8080/tobey/${tobey.tobeyId}`, init)
             .then(response => {
                 if (response.status === 204) {
                     history.push("/");
                 } else if (response.status === 404) {
-                    setErrors(["Maguire not found."]);
+                    setErrors(["tobey not found."]);
                 } else {
                     return response.json();
                 }
@@ -127,27 +127,27 @@ function MaguireForm() {
                 </ul>
             </div>}
             <form onSubmit={onSubmit}>
-                <h2>{maguire.maguireId ? "Edit" : "Add"} Maguire</h2>
+                <h2>{tobey.tobeyId ? "Edit" : "Add"} tobey</h2>
                 <div className="mb-2">
                     <label htmlFor="name" className="form-label">Name</label>
                     <input id="name" name="name" className="form-control"
-                        onChange={onChange} value={maguire.name}></input>
+                        onChange={onChange} value={tobey.name}></input>
                 </div>
                 <div className="mb-2">
                     <label htmlFor="description" className="form-label">Description</label>
                     <input id="description" name="description" className="form-control"
-                        onChange={onChange} value={maguire.description}></input>
+                        onChange={onChange} value={tobey.description}></input>
                 </div>
                 <div className="mb-2">
                     <label htmlFor="imageUrl" className="form-label">Image URL</label>
                     <input id="imageUrl" name="imageUrl" type="url" className="form-control"
-                        onChange={onChange} value={maguire.imageUrl}></input>
+                        onChange={onChange} value={tobey.imageUrl}></input>
                 </div>
                 {/* <div className="mb-2">
-                    <h3>TobeyTypes</h3>
+                    <h3>tags</h3>
                     {powers.map(p => <div key={p.powerId} className="form-check">
                         <input className="form-check-input" type="checkbox"
-                            value={p.powerId} checked={maguire.powers.find(i => i.powerId === p.powerId)} onChange={onChange}
+                            value={p.powerId} checked={tobey.powers.find(i => i.powerId === p.powerId)} onChange={onChange}
                             id={"power" + p.powerId} name="powers"></input>
                         <label className="form-check-label" htmlFor={"power" + p.powerId}>
                             {p.name}
@@ -164,4 +164,4 @@ function MaguireForm() {
 
 }
 
-export default MaguireForm;
+export default TobeyForm;

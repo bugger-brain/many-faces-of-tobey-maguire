@@ -1,9 +1,10 @@
 function Bio(){
     return (
         <main>
-            <h1>All About Tobey</h1>
+        <h1>All About Tobey</h1>
         <div class='container'>
-            <div class="col-lg-6">
+        
+            <div class="row row-cols-3">
                 <fieldset class="border" >
                     <legend class ='text-center'>Tobey Fast Facts:</legend>
                         <p>
@@ -16,7 +17,27 @@ function Bio(){
     
                     </p>
                 </fieldset>
+                <div class="col">
+                <img
+                src="https://images-na.ssl-images-amazon.com/images/I/51NbZ5fplML._AC_SL1010_.jpg" 
+                    className="card-img-right"
+                    alt="Young Tobey"
+                    width="300px"
+                    height="350px">
+        </img>
+        </div>
+        <div class="col">
+                <img
+                src="https://www1.pictures.zimbio.com/fp/Tobey+Maguire+Family+Leaving+Lunch+Santa+Monica+cKQf2HbpMrqx.jpg"
+                    className="card-img-right"
+                    alt="Tobey with family"
+                    width="300px"
+                    height="350px">
+        </img>
+        </div>
             </div>
+            
+            
         </div>
         <br />
         <div class='container'>

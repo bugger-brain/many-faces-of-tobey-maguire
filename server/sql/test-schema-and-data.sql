@@ -28,11 +28,11 @@ create table tobey_maguire_tobeytypes(
 );
 
 insert into tobeytypes(tobeytype_id, vibe) values
-	(1, 'Dancing Tobey'),
-    (2, 'Sad Tobey'),
-    (3, 'Angry Tobey'),
-    (4, 'Happy Tobey'),
-    (5, 'Awkward Tobey');
+	(1, 'dancing'),
+    (2, 'sad'),
+    (3, 'angry'),
+    (4, 'happy'),
+    (5, 'awkward');
 
 insert into tobey_maguire(maguire_id, `name`, `description`, image_url) values
 	(1, 'Dancing Tobey', 'Spiderman Dance Scene', 'https://i.imgur.com/kzh2pcp.jpg'),

@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 
 function Home() {
-    const [maguires, setMaguires] = useState([]);
+    const [tobeys, setTobeys] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/maguire")
+        fetch("http://localhost:8080/api/tobey")
         .then(response => response.json())
-        .then(data => setMaguires(data));
+        .then(data => setTobeys(data));
     }, []);
 
-    return maguires.map((maguire) => (
-        <Maguire key = {maguire.maguireId} maguire ={maguire} />
+    return tobey.map((tobey) => (
+        <Tobey key = {tobey.tobeyId} tobey ={tobey} />
     ))
 }
 

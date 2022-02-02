@@ -9,12 +9,11 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name="tobey_maguire")
-public class Maguire {
+public class Tobey {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int maguireId;
+    private int tobeyId;
     @NotBlank(message = "Name is required")
     private String name;
     @NotBlank(message = "Description is required")
@@ -23,17 +22,17 @@ public class Maguire {
     private String imageUrl;
 
     @ManyToMany
-    @JoinTable (name = "tobey_maguire_tobeytypes",
-            joinColumns = @JoinColumn(name = "maguire_id"),
-            inverseJoinColumns = @JoinColumn(name = "tobeytype_id"))
-    private List<TobeyType> tobeytypes = new ArrayList<>();
+    @JoinTable (name = "tobey_tag",
+            joinColumns = @JoinColumn(name = "tobey_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id"))
+    private List<Tag> tags = new ArrayList<>();
 
-    public int getMaguireId() {
-        return maguireId;
+    public int getTobeyId() {
+        return tobeyId;
     }
 
-    public void setMaguireId(int maguireId) {
-        this.maguireId = maguireId;
+    public void setTobeyId(int tobeyId) {
+        this.tobeyId = tobeyId;
     }
 
     public String getName() {
@@ -60,24 +59,24 @@ public class Maguire {
         this.imageUrl = imageUrl;
     }
 
-    public List<TobeyType> getTobeytypes() {
-        return tobeytypes;
+    public List<Tag> getTags() {
+        return tags;
     }
 
-    public void setTobeytypes(List<TobeyType> tobeytypes) {
-        this.tobeytypes = tobeytypes;
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Maguire maguire = (Maguire) o;
-        return maguireId == maguire.maguireId && name.equals(maguire.name) && description.equals(maguire.description) && imageUrl.equals(maguire.imageUrl);
+        Tobey tobey = (Tobey) o;
+        return tobeyId == tobey.tobeyId && name.equals(tobey.name) && description.equals(tobey.description) && imageUrl.equals(tobey.imageUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(maguireId, name, description, imageUrl);
+        return Objects.hash(tobeyId, name, description, imageUrl);
     }
 }

@@ -1,12 +1,11 @@
 package maguire.controllers;
 
-import maguire.domain.MaguireService;
+import maguire.domain.TobeyService;
 import maguire.domain.Result;
 import maguire.domain.ResultStatus;
-import maguire.domain.TobeyTypeService;
-import maguire.models.Maguire;
-import maguire.models.TobeyType;
-import org.springframework.beans.factory.annotation.Value;
+import maguire.domain.TagService;
+import maguire.models.Tobey;
+import maguire.models.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -21,40 +20,40 @@ import java.util.List;
 @RestController
 @CrossOrigin("http://localhost:3000")
 //@CrossOrigin(origins = {"http://localhost:3000","http://127.0.0.1:8080"})
-@RequestMapping("/api/maguire")
-public class MaguireController {
+@RequestMapping("/api/tobey")
+public class TobeyController {
 
-    private final MaguireService maguireService;
-    private final TobeyTypeService tobeyTypeService;
+    private final TobeyService tobeyService;
+    private final TagService tagService;
 
-    public MaguireController(MaguireService maguireService, TobeyTypeService tobeyTypeService) {
-        this.maguireService = maguireService;
-        this.tobeyTypeService = tobeyTypeService;
+    public TobeyController(TobeyService tobeyService, TagService tagService) {
+        this.tobeyService = tobeyService;
+        this.tagService = tagService;
     }
 
     @GetMapping
-    public List<Maguire> getMaguires() {
-        List<Maguire> maguires = maguireService.findAll();
-        return maguires;
+    public List<Tobey> getTobeys() {
+        List<Tobey> tobeys = tobeyService.findAll();
+        return tobeys;
     }
 
-    @GetMapping("/tobey/{tobeyTypeId}")
-    public List<Maguire> getMaguiresByTobeyTypeId(@PathVariable int tobeyTypeId) {
-        List<Maguire> maguires = maguireService.findByTobeyTypeId(tobeyTypeId);
-        return maguires;
+    @GetMapping("/tag/{tagId}")
+    public List<Tobey> getTagsByTobeyId(@PathVariable int tagId) {
+        List<Tobey> tobeys = tobeyService.findByTagId(tagId);
+        return tobeys;
     }
 
-    @GetMapping("/{maguireId}")
-    public ResponseEntity<Maguire> getMaguire(@PathVariable int maguireId) {
-        Maguire maguire = maguireService.findById(maguireId);
-        if (maguire == null) {
+    @GetMapping("/{tobeyId}")
+    public ResponseEntity<Tobey> getTobey(@PathVariable int tobeyId) {
+        Tobey tobey = tobeyService.findById(tobeyId);
+        if (tobey == null) {
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(maguire);
+        return ResponseEntity.ok(tobey);
     }
 
     @PostMapping
-    public ResponseEntity<Object> post(@RequestBody @Valid Maguire maguire,
+    public ResponseEntity<Object> post(@RequestBody @Valid Tobey tobey,
                                        BindingResult bindingResult,
                                        ServletRequest request) {
 
@@ -62,26 +61,26 @@ public class MaguireController {
             return new ResponseEntity<Object>(makeResult(bindingResult), HttpStatus.BAD_REQUEST);
         }
 
-        Result<Maguire> result = maguireService.add(maguire);
+        Result<Tobey> result = tobeyService.add(tobey);
         if (result.isSuccess()) {
 
-            String url = String.format("http://%s:%s/api/maguire/%s",
+            String url = String.format("http://%s:%s/api/tobey/%s",
                     request.getServerName(),
                     request.getServerPort(),
-                    maguire.getMaguireId());
+                    tobey.getTobeyId());
 
             return ResponseEntity.created(URI.create(url))
-                    .body(maguire);
+                    .body(tobey);
         }
         return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
     }
 
-    @PutMapping("/{maguireId}")
-    public ResponseEntity<Object> put(@PathVariable int maguireId,
-                                      @RequestBody @Valid Maguire maguire,
+    @PutMapping("/{tobeyId}")
+    public ResponseEntity<Object> put(@PathVariable int tobeyId,
+                                      @RequestBody @Valid Tobey tobey,
                                       BindingResult bindingResult) {
 
-        if (maguire == null || maguire.getMaguireId() != maguireId) {
+        if (tobey == null || tobey.getTobeyId() != tobeyId) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
@@ -89,7 +88,7 @@ public class MaguireController {
             return new ResponseEntity<Object>(makeResult(bindingResult), HttpStatus.BAD_REQUEST);
         }
 
-        Result<Void> result = maguireService.update(maguire);
+        Result<Void> result = tobeyService.update(tobey);
         switch (result.getStatus()) {
             case SUCCESS:
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -100,19 +99,19 @@ public class MaguireController {
         }
     }
 
-    @DeleteMapping("/{maguireId}")
-    public ResponseEntity<Void> delete(@PathVariable int maguireId) {
-        boolean success = maguireService.deleteById(maguireId);
+    @DeleteMapping("/{tobeyId}")
+    public ResponseEntity<Void> delete(@PathVariable int tobeyId) {
+        boolean success = tobeyService.deleteById(tobeyId);
         if (success) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping("/tobeytypes")
-    public List<TobeyType> getTobeyTypes() {
-        List<TobeyType> tobeyTypes = tobeyTypeService.findAll();
-        return tobeyTypes;
+    @GetMapping("/tags")
+    public List<Tag> getTobeyTypes() {
+        List<Tag> tags = tagService.findAll();
+        return tags;
     }
 
     private Result<Void> makeResult(BindingResult bindingResult) {

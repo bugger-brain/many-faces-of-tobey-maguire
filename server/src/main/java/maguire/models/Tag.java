@@ -4,20 +4,19 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name="tobeytypes")
-public class TobeyType {
+public class Tag {
 
     @Id
-    private int tobeytypeId;
+    private int tagId;
     @NotBlank
     private String vibe;
 
-    public int getTobeytypeId() {
-        return tobeytypeId;
+    public int getTagId() {
+        return tagId;
     }
 
-    public void setTobeytypeId(int tobeytypeId) {
-        this.tobeytypeId = tobeytypeId;
+    public void setTagId(int tagId) {
+        this.tagId = tagId;
     }
 
     public String getVibe() {

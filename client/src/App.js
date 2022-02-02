@@ -23,7 +23,7 @@ function App() {
         <Route path="/leaveamessage">
           <MessageForm />
         </Route>
-        <Route path={"/tobey/:tobeyTypeId"}>
+        <Route path={"/tobey/:tagId"}>
           <Tobey  />
         </Route>
       </Switch>

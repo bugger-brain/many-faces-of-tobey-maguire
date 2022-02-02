@@ -27,12 +27,21 @@ create table tobey_tag(
             references tag(tag_id)
 );
 
+<<<<<<< HEAD
 insert into tag(tag_id, vibe) values
 	(1, 'Dancing Tobey'),
     (2, 'Sad Tobey'),
     (3, 'Angry Tobey'),
     (4, 'Happy Tobey'),
     (5, 'Awkward Tobey');
+=======
+insert into tobeytypes(tobeytype_id, vibe) values
+	(1, 'dancing'),
+    (2, 'sad'),
+    (3, 'angry'),
+    (4, 'happy'),
+    (5, 'awkward');
+>>>>>>> 2ccd81e9ba1cfd1d62cd943dceb4495d7e3edcb0
 
 insert into tobey(tobey_id, `name`, `description`, image_url) values
 	(1, 'Dancing Tobey', 'Spiderman Dance Scene', 'https://i.imgur.com/kzh2pcp.jpg'),

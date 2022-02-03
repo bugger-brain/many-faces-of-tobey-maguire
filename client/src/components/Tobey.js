@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import TobeyCard from "./TobeyCard";
 
-
-
 function Tobey () {
     const [tobeys, setTobeys] = useState([]);
     const { tagId } = useParams();
@@ -39,7 +37,6 @@ function Tobey () {
         </div>))}
         </div>
     );
-    
     
 }
 

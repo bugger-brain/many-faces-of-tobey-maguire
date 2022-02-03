@@ -27,6 +27,16 @@ create table tobey_tag(
             references tag(tag_id)
 );
 
+create table message (
+	message_id int primary key auto_increment,
+	`name` varchar(255) not null,
+	`description` varchar(2048) not null
+);
+
+insert into message (message_id, `name`, `description`) values
+	(1, 'Sheridan', 'hi tobey!'),
+    (2, 'Test', 'testytest');
+
 
 insert into tag(tag_id, vibe) values
 	(1, 'dancing'),

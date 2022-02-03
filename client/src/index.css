@@ -11,8 +11,3 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
-
-/* Modify the background color */
-.navbar-custom {
-  background-color: blue;
-}

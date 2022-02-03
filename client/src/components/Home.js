@@ -34,9 +34,7 @@ function Home() {
 </div>
     
     return tobey.map((tobey) => (
-
         <Tobey key = {tobey.tobeyId} tobey ={tobey} />
-
     ))
 
     

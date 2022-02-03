@@ -26,7 +26,7 @@ public class MessageController {
         this.messageService = messageService;
     }
 
-    @GetMapping("/messages")
+    @GetMapping
     public List<Message> getMessages() {
         List<Message> messages = messageService.findAll();
        return messages;

@@ -5,7 +5,7 @@ function Tag({ tagId, vibe }) {
 
     const history = useHistory();
 
-    function func() {
+    function filterByTag() {
         // console.log("click!");
         history.push(`/tobey/${tagId}`);
         // <Link to="/courses?sort=name" />
@@ -16,7 +16,7 @@ function Tag({ tagId, vibe }) {
         
         // <Link to={`/tobey/${tagId}`}> {vibe} </Link>
 
-        <button onClick={func}>
+        <button onClick={filterByTag}>
             {vibe}
             <Link to={`/tobey/${tagId}`} />
         </button>

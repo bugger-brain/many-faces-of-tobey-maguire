@@ -1,7 +1,7 @@
 function Bio(){
     return (
         <main>
-        <h1>All About Tobey</h1>
+        <h1><u><b>All About Tobey</b></u></h1>
         <div class='container'>
         
             <div class="row row-cols-3">

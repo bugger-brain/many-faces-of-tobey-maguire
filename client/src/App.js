@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Tobey from "./components/Tobey";
 import NavBar from "./components/NavBar";
@@ -6,7 +5,6 @@ import Bio from "./components/Bio";
 import Filmography from "./components/Filmography";
 import MessageForm from "./components/MessageForm";
 import CarouselSpin from "./components/CarouselSpin";
-
 function App() {
   return (
     <div className="container">

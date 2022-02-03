@@ -1,4 +1,4 @@
-
+import { useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import TobeyCard from "./TobeyCard";
@@ -8,16 +8,18 @@ import TobeyCard from "./TobeyCard";
 function Tobey () {
     const [tobeys, setTobeys] = useState([]);
     const { tagId } = useParams();
-    console.log(tagId);
+    const history = useHistory();
+
+    // console.log(tagId);
 
     const [errors, setErrors] = useState([]);
 
     //do i need these
-    const [tag, setTobeyType] = useState([]);
-    const [name, setName] = useState("");
-    const [description, setDescription] = useState("");
-    const [imageURL, setImageURL] = useState("");
-    const [view, setView] = useState("List");
+    // const [tag, setTag] = useState([]);
+    // const [name, setName] = useState("");
+    // const [description, setDescription] = useState("");
+    // const [imageURL, setImageURL] = useState("");
+    // const [view, setView] = useState("List");
 
     useEffect(() => {
         fetch(`http://localhost:8080/api/tobey${tagId ? "/tag/"+tagId:""}`)
@@ -28,7 +30,7 @@ function Tobey () {
                 return Promise.reject("bad fetch");
             }).then(tobeys => setTobeys(tobeys))
             .catch(console.error);
-    }, []);
+    }, [history, tagId]);
 
     return (
         <div className="row row-cols-md-3 g-2">

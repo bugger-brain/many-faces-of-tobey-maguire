@@ -10,7 +10,7 @@ function MessageForm() {
     ];
 
     const [messages, setMessages] = useState(defaultMessage);
-    const [name, setName] = useState("")
+    const [name, setName] = useState("");
     const [description, setDescription] = useState("");
 
     const history = useHistory();
@@ -29,7 +29,7 @@ function MessageForm() {
 
         setName("");
         setDescription("");
-
+        
     }
     return (
         <form onSubmit={onSubmit}>

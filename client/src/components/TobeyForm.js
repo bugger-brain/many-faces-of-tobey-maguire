@@ -8,11 +8,7 @@ function TobeyForm() {
         name: "",
         description: "",
         imageUrl: "",
-<<<<<<< HEAD:client/src/components/MaguireForm.js
-        powers: []
-=======
         tags: []
->>>>>>> 2ccd81e9ba1cfd1d62cd943dceb4495d7e3edcb0:client/src/components/TobeyForm.js
     });
     const [tags, setTags] = useState([]);
     const [errors, setErrors] = useState([]);
@@ -30,7 +26,6 @@ function TobeyForm() {
                     return Promise.reject("could not fetch tobey");
                 })
                 .then(m => {
-                    // h.humanName = h.humanName || "";
                     setTobey(m);
                 })
                 .catch(console.error);
@@ -74,8 +69,6 @@ function TobeyForm() {
         }
     }
 
-<<<<<<< HEAD:client/src/components/MaguireForm.js
-=======
     function add() {
 
         const init = {
@@ -168,7 +161,6 @@ function TobeyForm() {
         </>
     );
 
->>>>>>> 2ccd81e9ba1cfd1d62cd943dceb4495d7e3edcb0:client/src/components/TobeyForm.js
 }
 
 export default TobeyForm;

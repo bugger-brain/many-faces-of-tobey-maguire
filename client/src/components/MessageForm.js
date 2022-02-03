@@ -33,7 +33,7 @@ function MessageForm() {
     }
     return (
         <form onSubmit={onSubmit}>
-            <h2>Leave a Message for Tobey</h2>
+            <h1><u><b>Leave a Message for Tobey</b></u></h1>
 
             <div>
                 <label htmlFor="name"> Name: </label>
@@ -54,7 +54,7 @@ function MessageForm() {
                     name="description"
                     value={description}
                     onChange={event => setDescription(event.target.value)}
-                    rows="3">
+                    rows="4">
                 </textarea>
             </div>
 

@@ -23,7 +23,7 @@ function Home() {
       <Route path="/" exact>
         <CarouselSpin />
       </Route>
-      
+
       <Route path="/" exact>
         <Tobey />
       </Route>

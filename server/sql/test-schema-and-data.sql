@@ -126,3 +126,6 @@ select *
 from tobey as t
 left outer join tobey_tag tt on t.tobey_id = tt.tobey_id
 left outer join tag ta on tt.tag_id = ta.tag_id;
+
+select *
+from message;

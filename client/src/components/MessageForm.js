@@ -78,7 +78,7 @@ function MessageForm() {
                 </ul>
             </div>}
         <form onSubmit={onSubmit}>
-            <h2>Leave a Message for Tobey!!</h2>
+            <h1><u><b>Leave a Message for Tobey!!</b></u></h1>
 
             <div>
                 <label htmlFor="name"> Name: </label>

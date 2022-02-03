@@ -57,7 +57,7 @@ function TobeyForm() {
             nextTobey[event.target.name] = event.target.value;
         }
     
-        setHero(nextTobey);
+        setTobey(nextTobey);
     }
 
     function onSubmit(event) {
@@ -160,7 +160,6 @@ function TobeyForm() {
             </form >
         </>
     );
-
 }
 
 export default TobeyForm;

@@ -15,11 +15,11 @@ function Tobey () {
     const [errors, setErrors] = useState([]);
 
     //do i need these
-    // const [tag, setTag] = useState([]);
-    // const [name, setName] = useState("");
-    // const [description, setDescription] = useState("");
-    // const [imageURL, setImageURL] = useState("");
-    // const [view, setView] = useState("List");
+    const [tag, setTag] = useState([]);
+    const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
+    const [imageURL, setImageURL] = useState("");
+    const [view, setView] = useState("List");
 
     useEffect(() => {
         fetch(`http://localhost:8080/api/tobey${tagId ? "/tag/"+tagId:""}`)

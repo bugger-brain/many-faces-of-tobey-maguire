@@ -1,39 +1,84 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 function MessageForm() {
-    const defaultMessage = [
-        {
-            name: "",
-            description: ""
-        }
-    ];
+   
 
-    const [messages, setMessages] = useState(defaultMessage);
+    const [messages, setMessages] = useState([]);
     const [name, setName] = useState("")
     const [description, setDescription] = useState("");
-
+    const [errors, setErrors] = useState([]);
+    //const [file, setFiles] = useState("")
     const history = useHistory();
+
+    useEffect(() => {
+         fetch("http://localhost:8080/api/leaveamessage")
+        .then(response => response.json())
+        .then(data => setMessages(data))
+        .catch(error => console.log(error))
+    }, []);
+
+    const addMessage = () => {
+        const newMessage ={
+            name,
+            description,
+            //add file
+        };
+
+        const initAdd = {
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(newMessage)
+        }
+        fetch("http://localhost:8080/api/leaveamessage", initAdd)
+        .then(response => {
+            if (response.status === 201 || response.status === 400) {
+                return response.json();
+            }
+            return Promise.reject("Unexpected response from the server.");
+        })
+        .then(data => {
+            if(data.messageId) {
+                setMessages([...messages, data]);
+                setErrors([]);
+                setName("");
+                setDescription("");
+            } else {
+                setErrors(data)
+            }
+        })
+        .catch(error => console.log(error))
+    }
 
     const onSubmit = (event) => {
         event.preventDefault();
-
-        const updatedMessages = { ...messages };
-
-        const newMessage = {
-            name,
-            description
-        };
-        setMessages([...messages, newMessage]);
+        addMessage();
         console.log(messages);
 
-        setName("");
-        setDescription("");
-
     }
+
+    const renderMessages = () => {
+        return messages.map(message =>
+            <div key={message.messageId} className="row">
+                <div className="col-8">
+                    {message.name}: {message.description}
+                </div>
+            </div>
+             )
+    }
+    
     return (
+       <>
+       {errors.length > 0 && 
+            <div className="alert alert-danger">
+                <ul>
+                    {errors.map(err => <li>{err}</li>)}
+                </ul>
+            </div>}
         <form onSubmit={onSubmit}>
-            <h2>Leave a Message for Tobey</h2>
+            <h2>Leave a Message for Tobey!!</h2>
 
             <div>
                 <label htmlFor="name"> Name: </label>
@@ -57,7 +102,7 @@ function MessageForm() {
                     rows="3">
                 </textarea>
             </div>
-
+            
             <div class="mb-3">
                 <label for="formFileMultiple" class="form-label">Attach an image!</label>
                 <input class="form-control" type="file" id="formFileMultiple" multiple></input>
@@ -68,6 +113,13 @@ function MessageForm() {
                 <button> <Link to="/"> Cancel</Link></button>
             </div>
         </form>
+        <div>
+            <ul className="list-group">
+                <h5>See Messages from Other TobeyFans:</h5>
+                    {renderMessages()}
+            </ul>
+         </div>
+        </>
     );
 }
 

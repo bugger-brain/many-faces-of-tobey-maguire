@@ -1,14 +1,14 @@
-
+import { useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import TobeyCard from "./TobeyCard";
 
-
-
 function Tobey () {
     const [tobeys, setTobeys] = useState([]);
     const { tagId } = useParams();
-    console.log(tagId);
+    const history = useHistory();
+
+    // console.log(tagId);
 
     const [errors, setErrors] = useState([]);
 
@@ -28,7 +28,7 @@ function Tobey () {
                 return Promise.reject("bad fetch");
             }).then(tobeys => setTobeys(tobeys))
             .catch(console.error);
-    }, []);
+    }, [history, tagId]);
 
     return (
         <div className="row row-cols-md-3 g-2">
@@ -37,7 +37,6 @@ function Tobey () {
         </div>))}
         </div>
     );
-    
     
 }
 

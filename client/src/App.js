@@ -5,30 +5,35 @@ import NavBar from "./components/NavBar";
 import Bio from "./components/Bio";
 import Filmography from "./components/Filmography";
 import MessageForm from "./components/MessageForm";
+import CarouselSpin from "./components/CarouselSpin";
+
 function App() {
   return (
-  <div className="container">
-    <Router>
-      <NavBar />
-      <Switch>
-        <Route path="/" exact>
-          <Tobey />
-        </Route>
-        <Route path="/biography">
-          <Bio />
-        </Route>
-        <Route path="/filmography">
-          <Filmography />
-        </Route>
-        <Route path="/leaveamessage">
-          <MessageForm />
-        </Route>
-        <Route path={"/tobey/:tagId"}>
-          <Tobey  />
-        </Route>
-      </Switch>
-    </Router>
-  </div>
+    <div className="container">
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route path="/" exact>
+            <Tobey />
+          </Route>
+          {/* <Route path="/" >
+            <CarouselSpin />
+          </Route> */}
+          <Route path="/biography">
+            <Bio />
+          </Route>
+          <Route path="/filmography">
+            <Filmography />
+          </Route>
+          <Route path="/leaveamessage">
+            <MessageForm />
+          </Route>
+          <Route path={"/tobey/:tagId"}>
+            <Tobey />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   )
 }
 export default App;

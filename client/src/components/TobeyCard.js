@@ -4,11 +4,12 @@ import Tag from "./Tag";
 
 function TobeyCard({ tobey }) {
     return (
-        <div className="card">
+
+        <div className="card text-black bg-primary mb-3">
             {tobey.imageUrl && <img src={tobey.imageUrl} className="card-img-top" alt={tobey.name}></img>}
             <div className="card-body">
-                <h5 className="card-title">{tobey.name}</h5>
-                <h6 className="card-subtitle">{tobey.description}</h6> 
+                <h1 className="card-title">{tobey.name}</h1>
+                {/* <h6 className="card-subtitle">{tobey.description}</h6>  */}
                 <h7 className="card-text">{tobey.tag}</h7>
                 {tobey.tags.map(t => (<Tag tagId={t.tagId} vibe={t.vibe} />))}
             </div>

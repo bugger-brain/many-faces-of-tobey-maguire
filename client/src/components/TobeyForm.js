@@ -8,11 +8,7 @@ function TobeyForm() {
         name: "",
         description: "",
         imageUrl: "",
-<<<<<<< HEAD
-        powers: []
-=======
         tags: []
->>>>>>> ed66ab38ea97f831910c19adc40ac022cd6aa229
     });
     const [tags, setTags] = useState([]);
     const [errors, setErrors] = useState([]);
@@ -74,8 +70,6 @@ function TobeyForm() {
         }
     }
 
-<<<<<<< HEAD
-=======
     function add() {
 
         const init = {
@@ -168,7 +162,6 @@ function TobeyForm() {
         </>
     );
 
->>>>>>> ed66ab38ea97f831910c19adc40ac022cd6aa229
 }
 
 export default TobeyForm;

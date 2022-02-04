@@ -1,9 +1,22 @@
 import { Link, useHistory } from "react-router-dom";
+import { useContext } from "react";
+import EditContext from "../contexts/EditContext";
 
 
 function NavBar() {
 
+    const context = useContext(EditContext);
     const history = useHistory();
+
+    const stopEditing = () => {
+        context.setEditing(false);
+        history.push("/");
+    };
+
+    const startEditing = () => {
+        context.setEditing(true);
+        history.push("/");
+    };
 
 
     return (
@@ -29,7 +42,14 @@ function NavBar() {
                             <a class="nav-link" href="/leaveamessage">Leave A Message</a>
                         </li>
                     </ul>
+                    <div className="col align-self-center text-end">
+                        {context.editing ? <>
+                            <button className="btn btn-dark me-2" onClick={stopEditing}>View Mode</button>
+                            <Link to="/add" className="btn btn-primary">Post a Tobey</Link>
+                        </> : <button className="btn btn-dark me-2" onClick={startEditing}>Edit Mode</button>}
+                    </div>
                 </div>
+
             </div>
         </nav>
     );

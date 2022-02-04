@@ -75,7 +75,7 @@ public class TobeyController {
         return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
     }
 
-    @PutMapping("/{tobeyId}")
+    @PutMapping("/edit/{tobeyId}")
     public ResponseEntity<Object> put(@PathVariable int tobeyId,
                                       @RequestBody @Valid Tobey tobey,
                                       BindingResult bindingResult) {
@@ -109,7 +109,7 @@ public class TobeyController {
     }
 
     @GetMapping("/tags")
-    public List<Tag> getTobeyTypes() {
+    public List<Tag> getTags() {
         List<Tag> tags = tagService.findAll();
         return tags;
     }

@@ -35,8 +35,8 @@ create table message (
 
 insert into message (message_id, `name`, `description`) values
 	(1, 'Sheridan', 'hi tobey!'),
-    (2, 'Steph', 'We love you Tobey'),
-    (3, 'Paul', 'Im your biggest fan!!');
+    (2, 'paaaaul', 'I LOVE YOR MOVIES!!'),
+    (3, 'Steph', 'Im your biggest fan');
 
 
 insert into tag(tag_id, vibe) values
@@ -63,12 +63,12 @@ insert into tag(tag_id, vibe) values
     (22, 'protec');
 
 insert into tobey(tobey_id, `name`, `description`, image_url) values
-	(1, 'Dancing Tobey', 'Spiderman Dance Scene', 'https://c.tenor.com/P8VsDwHZreYAAAAd/tobey-maguire-spider-man.gif'),
-    (2, 'Angry Tobey', 'Tobey angry with paparrazi', 'https://images4.fanpop.com/image/photos/23000000/angry-Tobey-tobey-maguire-23084753-450-536.jpg'),
-    (3, 'Sad Tobey', 'Tobey sad & crying', 'https://townsquare.media/site/442/files/2012/09/tobey-cry.jpg?w=980&q=75'),
-    (4, 'Awkward Tobey', 'Weird Face Tobey', 'https://www.hayvine.com/careers/16065716561.png'),
-    (5, 'Happy Tobey', 'Smiling Tobey', 'https://i0.wp.com/urbanasian.com/wp-content/uploads/2019/06/Tobey-Maguire.png?w=475&ssl=1'),
-    (6, 'Winter Tobey', 'Skiing in the snow', 'https://i.pinimg.com/originals/ec/5c/ef/ec5cef6d18995202cbc394d29dafbeae.jpg'),
+	(1, 'Spiderman Dance', 'Spiderman Dance Scene', 'https://c.tenor.com/P8VsDwHZreYAAAAd/tobey-maguire-spider-man.gif'),
+    (2, 'Tobey angry with paparrazi', 'Tobey angry with paparrazi', 'https://i.ytimg.com/vi/hB-mcozQZ5Y/maxresdefault.jpg'),
+    (3, 'Tobey sad & crying', 'Tobey sad & crying', 'https://townsquare.media/site/442/files/2012/09/tobey-cry.jpg?w=980&q=75'),
+    (4, 'Awkward Face Tobey', 'Weird Face Tobey', 'https://www.hayvine.com/careers/16065716561.png'),
+    (5, 'Happy Smiling Tobey', 'Smiling Tobey', 'https://i0.wp.com/urbanasian.com/wp-content/uploads/2019/06/Tobey-Maguire.png?w=475&ssl=1'),
+    (6, 'Skiing in the snow', 'Skiing in the snow', 'https://i.pinimg.com/originals/ec/5c/ef/ec5cef6d18995202cbc394d29dafbeae.jpg'),
     (7, 'Weird smiling Tobey', 'Smiling in his apartment', 'https://stealthoptional.com/wp-content/uploads/2021/04/Spider-man-3-tobey-maguire.jpeg'),
     (8, 'Joker Crossover', 'Tobey Joker Crossover', 'https://cdn.ebaumsworld.com/mediaFiles/picture/705380/86059123.png'),
     (9, 'Saving a Train', 'Saving a train', 'https://thumbs.gfycat.com/PlayfulFrightenedBoar-poster.jpg'),
@@ -100,6 +100,7 @@ insert into tobey_tag(tobey_id, tag_id) values
     (6, 9),
     (6, 10),
     (6, 17),
+    (6, 21),
     (7, 7),
     (7, 11),
     (7, 12),
@@ -111,7 +112,6 @@ insert into tobey_tag(tobey_id, tag_id) values
     (9, 7),
     (9, 17),
     (9, 20),
-    (9, 21),
     (10, 6),
     (10, 16),
     (10, 11),

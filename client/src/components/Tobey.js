@@ -32,6 +32,7 @@ function Tobey () {
 
     return (
         
+        // <div className="row row-cols-md-3 g-2">
         <div className="row row-cols-md-3 g-2">
             {tobeys.map(tobey => (<div key={tobey.tobeyId} className = "col">
                 <TobeyCard tobey ={tobey} />

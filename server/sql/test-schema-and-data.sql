@@ -35,7 +35,7 @@ create table message (
 
 insert into message (message_id, `name`, `description`) values
 	(1, 'Sheridan', 'hi tobey!'),
-    (2, 'Test', 'testytest');
+    (2, 'paaaaul', 'I LOVE YOR MOVIES!!');
 
 
 insert into tag(tag_id, vibe) values
@@ -99,6 +99,7 @@ insert into tobey_tag(tobey_id, tag_id) values
     (6, 9),
     (6, 10),
     (6, 17),
+    (6, 21),
     (7, 7),
     (7, 11),
     (7, 12),
@@ -110,7 +111,6 @@ insert into tobey_tag(tobey_id, tag_id) values
     (9, 7),
     (9, 17),
     (9, 20),
-    (9, 21),
     (10, 6),
     (10, 16),
     (10, 11),

@@ -9,10 +9,10 @@ function TobeyCard({ tobey }) {
 
     return (
 
-        <div className="card text-black bg-primary mb-3">
+        <div className="h-100 card text-black bg-primary mb-3">
             {tobey.imageUrl && <img src={tobey.imageUrl} className="card-img-top" alt={tobey.name}></img>}
             <div className="card-body">
-                <h1 className="card-title">{tobey.name}</h1>
+                <h1 className="card-subtitle">{tobey.name}</h1>
                 {/* <h6 className="card-subtitle">{tobey.description}</h6>  */}
                 <h6 className="card-text">{tobey.tag}</h6>
                 {tobey.tags.map(t => (<Tag tagId={t.tagId} vibe={t.vibe} />))}

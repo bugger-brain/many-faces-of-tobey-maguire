@@ -103,7 +103,7 @@ function TobeyForm() {
             },
             body: JSON.stringify(tobey)
         };
-        fetch(`http://localhost:8080/api/tobey/${tobey.tobeyId}`, init)
+        fetch(`http://localhost:8080/api/tobey/edit/${tobey.tobeyId}`, init)
             .then(response => {
                 if (response.status === 204) {
                     history.push("/");
@@ -145,12 +145,12 @@ function TobeyForm() {
                         onChange={onChange} value={tobey.imageUrl}></input>
                 </div>
 
-                <div className="mb-2">
+                {/* <div className="mb-2">
                     <label htmlFor="tags" className="form-label">Tags</label>
-                    
+
                     <select id="tags" name="tags" type="url" className="form-control"
                         onChange={onChange} value={tobey.tags}></select>
-                </div>
+                </div> */}
 
                 {/* <div className="mb-2">
                     <h3>tags</h3>

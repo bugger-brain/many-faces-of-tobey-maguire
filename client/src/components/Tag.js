@@ -10,13 +10,6 @@ function Tag({ tagId, vibe }) {
     }
 
     return (
-
-        
-
-        // <button onClick={filterByTag}>
-        //     {vibe}
-        //     <Link to={`/tobey/${tagId}`} />
-        // </button>
         <span className="badge badge-pill badge-light" onClick={filterByTag} >
             {vibe}
         </span>

@@ -10,6 +10,7 @@ function TobeyForm() {
         imageUrl: "",
         tags: []
     });
+
     
     const [tags, setTags] = useState([]);
     const [errors, setErrors] = useState([]);
@@ -145,12 +146,16 @@ function TobeyForm() {
                         onChange={onChange} value={tobey.imageUrl}></input>
                 </div>
 
-                {/* <div className="mb-2">
+                <div className="mb-2">
                     <label htmlFor="tags" className="form-label">Tags</label>
 
                     <select id="tags" name="tags" type="url" className="form-control"
-                        onChange={onChange} value={tobey.tags}></select>
-                </div> */}
+                        onChange={onChange} value={tobey.tags} multiple >
+                            {tobey.tags.map(t => <div key={t.tagId} className="option">
+                                <option value={t.tagId}>{t.name}</option>
+                            </div>)}
+                        </select>
+                </div>
 
                 {/* <div className="mb-2">
                     <h3>tags</h3>

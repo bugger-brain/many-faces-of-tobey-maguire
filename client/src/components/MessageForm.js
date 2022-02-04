@@ -4,11 +4,15 @@ import { Link, useHistory } from "react-router-dom";
 function MessageForm() {
    
 
+    const [message, setMessage] = useState({
+        messageId: 0,
+        name: "",
+        description: ""
+        // add file
+    })
     const [messages, setMessages] = useState([]);
-    const [name, setName] = useState("")
-    const [description, setDescription] = useState("");
+
     const [errors, setErrors] = useState([]);
-    //const [file, setFiles] = useState("")
     const history = useHistory();
 
     useEffect(() => {
@@ -16,25 +20,22 @@ function MessageForm() {
         .then(response => response.json())
         .then(data => setMessages(data))
         .catch(error => console.log(error))
-    }, []);
+    }, [messages]);
 
     const addMessage = () => {
-        const newMessage ={
-            name,
-            description,
-            //add file
-        };
 
         const initAdd = {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
             },
-            body: JSON.stringify(newMessage)
+            body: JSON.stringify(message)
         }
+
         fetch("http://localhost:8080/api/leaveamessage", initAdd)
         .then(response => {
             if (response.status === 201 || response.status === 400) {
+                <Link to={"/leaveamessage"} />
                 return response.json();
             }
             return Promise.reject("Unexpected response from the server.");
@@ -43,8 +44,6 @@ function MessageForm() {
             if(data.messageId) {
                 setMessages([...messages, data]);
                 setErrors([]);
-                setName("");
-                setDescription("");
             } else {
                 setErrors(data)
             }
@@ -52,11 +51,21 @@ function MessageForm() {
         .catch(error => console.log(error))
     }
 
+    function onChange(event) {
+        const nextMessage = { ...message };
+        nextMessage[event.target.name] = event.target.value;
+        setMessage(nextMessage);
+    }
+
     const onSubmit = (event) => {
         event.preventDefault();
         addMessage();
-        console.log(messages);
+        clearForms();
+    }
 
+    function clearForms() {
+        const blankMessage = {name:"",description:""};
+        setMessage(blankMessage);
     }
 
     const renderMessages = () => {
@@ -78,7 +87,7 @@ function MessageForm() {
                 </ul>
             </div>}
         <form onSubmit={onSubmit}>
-            <h2>Leave a Message for Tobey!!</h2>
+            <h1><u><b>Leave a Message for Tobey!!</b></u></h1>
 
             <div>
                 <label htmlFor="name"> Name: </label>
@@ -86,10 +95,10 @@ function MessageForm() {
                     type="text"
                     id="name"
                     name="name"
-                    value={name}
-                    onChange={event => setName(event.target.value)}
+                    value={message.name}
+                    onChange={onChange}
+                    required
                 />
-
             </div>
             <div>
                 <label htmlFor="description"> Your Message: </label>
@@ -97,17 +106,16 @@ function MessageForm() {
                     type="text"
                     id="description"
                     name="description"
-                    value={description}
-                    onChange={event => setDescription(event.target.value)}
-                    rows="4">
-                </textarea>
+                    value={message.description}
+                    onChange={onChange}
+                    rows="3"
+                    required
+                />
             </div>
-            
-            <div class="mb-3">
+            {/* <div class="mb-3">
                 <label for="formFileMultiple" class="form-label">Attach an image!</label>
                 <input class="form-control" type="file" id="formFileMultiple" multiple></input>
-            </div>
-
+            </div> */}
             <div>
                 <button type="submit">Send</button>
                 <button> <Link to="/"> Cancel</Link></button>

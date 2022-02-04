@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import Bio from "./components/Bio";
 import Filmography from "./components/Filmography";
 import MessageForm from "./components/MessageForm";
+import Home from "./components/Home";
 import CarouselSpin from "./components/CarouselSpin";
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route path="/" exact>
-            <Tobey />
+            <Home />
           </Route>
           {/* <Route path="/" >
             <CarouselSpin />

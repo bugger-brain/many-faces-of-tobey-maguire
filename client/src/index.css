@@ -44,3 +44,5 @@ code {
   color: #ffffff;
   transition: all 0.2s;
 }
+
+canvas {display: block;}

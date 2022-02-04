@@ -40,7 +40,7 @@ public class Message {
     public void setName(String name) {
         this.name = name;
     }
-//
+
 //    public Blob getFile() {
 //        return file;
 //    }

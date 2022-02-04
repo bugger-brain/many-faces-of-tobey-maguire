@@ -7,8 +7,8 @@ function MessageForm() {
     const [message, setMessage] = useState({
         messageId: 0,
         name: "",
-        description: ""
-        // add file
+        description: "",
+        file:""
     })
     const [messages, setMessages] = useState([]);
 
@@ -56,6 +56,44 @@ function MessageForm() {
         nextMessage[event.target.name] = event.target.value;
         setMessage(nextMessage);
     }
+    
+    function loadFile(event) {
+        var image = document.getElementById('output');
+        var imageURL = URL.createObjectURL(event.target.files[0]);
+        image.src = imageURL;
+        
+    
+        // var canvas = document.getElementById('canvas');
+        // canvas.width = image.clientWidth;
+        // canvas.height = image.clientHeight;
+
+        // let context = canvas.getContext('2d');
+
+        // context.drawImage(image, 0, 0);
+        
+        // canvas.toBlob(function(blob) {
+            
+        //     let link = document.createElement('a');
+        //     link.download = 'example.png';
+          
+        //     link.href = URL.createObjectURL(event.target.files[0]);
+          
+           
+        //     URL.revokeObjectURL(link.href);
+        //   }, 'image/png');
+
+        // var reader = new FileReader();
+        // reader.readAsDataURL();
+        // reader.onloadend =function() {
+        //     var base64data =reader.result
+        //     console.log(base64data)
+        // }
+};
+      
+
+
+
+
 
     const onSubmit = (event) => {
         event.preventDefault();
@@ -112,10 +150,17 @@ function MessageForm() {
                     required
                 />
             </div>
-            {/* <div class="mb-3">
-                <label for="formFileMultiple" class="form-label">Attach an image!</label>
-                <input class="form-control" type="file" id="formFileMultiple" multiple></input>
-            </div> */}
+             <div class="mb-3">
+                <label for="file">Attach an Image: </label>
+                <input type="file" 
+                    id="file" 
+                    accept="image/*"
+                    name="image"
+                    onChange={loadFile}
+                    ></input>
+                <img id="output" width="200"/> 
+                {/* <canvas id="canvas"></canvas> */}
+            </div> 
             <div>
                 <button type="submit">Send</button>
                 <button> <Link to="/"> Cancel</Link></button>
@@ -123,7 +168,7 @@ function MessageForm() {
         </form>
         <div>
             <ul className="list-group">
-                <h5>See Messages from Other TobeyFans:</h5>
+                <h5>See Messages from Other TobeyTownies:</h5>
                     {renderMessages()}
             </ul>
          </div>

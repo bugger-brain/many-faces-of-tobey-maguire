@@ -35,7 +35,8 @@ create table message (
 
 insert into message (message_id, `name`, `description`) values
 	(1, 'Sheridan', 'hi tobey!'),
-    (2, 'Test', 'testytest');
+    (2, 'Steph', 'We love you Tobey'),
+    (3, 'Paul', 'Im your biggest fan!!');
 
 
 insert into tag(tag_id, vibe) values

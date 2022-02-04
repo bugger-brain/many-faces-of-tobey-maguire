@@ -160,10 +160,6 @@ function TobeyForm() {
             </form >
         </>
     );
-<<<<<<< HEAD
-
-=======
->>>>>>> 030873404a2be50b12aa58a71f3d1375b1d61776
 }
 
 export default TobeyForm;

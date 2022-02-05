@@ -35,7 +35,7 @@ create table message (
 
 insert into message (message_id, `name`, `description`) values
 	(1, 'Sheridan', 'hi tobey!'),
-    (2, 'paaaaul', 'I LOVE YOR MOVIES!!'),
+    (2, 'paaaaul', 'I LOVE YOUR MOVIES!!'),
     (3, 'Steph', 'Im your biggest fan');
 
 
@@ -59,12 +59,12 @@ insert into tag(tag_id, vibe) values
     (18, 'evil'),
     (19, 'gif'),
     (20, 'tobey-prime'),
-    (21, 'paparazi'),
+    (21, 'paparazzi'),
     (22, 'protec');
 
 insert into tobey(tobey_id, `name`, `description`, image_url) values
 	(1, 'Spiderman Dance', 'Spiderman Dance Scene', 'https://c.tenor.com/P8VsDwHZreYAAAAd/tobey-maguire-spider-man.gif'),
-    (2, 'Tobey angry with paparrazi', 'Tobey angry with paparrazi', 'https://i.ytimg.com/vi/hB-mcozQZ5Y/maxresdefault.jpg'),
+    (2, 'Tobey angry with paparazzi', 'Tobey angry with paparazzi', 'https://i.ytimg.com/vi/hB-mcozQZ5Y/maxresdefault.jpg'),
     (3, 'Tobey sad & crying', 'Tobey sad & crying', 'https://townsquare.media/site/442/files/2012/09/tobey-cry.jpg?w=980&q=75'),
     (4, 'Awkward Face Tobey', 'Weird Face Tobey', 'https://www.hayvine.com/careers/16065716561.png'),
     (5, 'Happy Smiling Tobey', 'Smiling Tobey', 'https://i0.wp.com/urbanasian.com/wp-content/uploads/2019/06/Tobey-Maguire.png?w=475&ssl=1'),
